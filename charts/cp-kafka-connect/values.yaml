@@ -133,3 +133,15 @@ livenessProbe:
   # initialDelaySeconds: 30
   # periodSeconds: 5
   # failureThreshold: 10
+
+## "startupProbe" is to protect slow starting containers that require an additional startup time
+## on their first initialization
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+startupProbe:
+  # httpGet:
+  #   path: /connectors
+  #   port: 8083
+  # initialDelaySeconds: 30
+  # periodSeconds: 5
+  # failureThreshold: 10
+

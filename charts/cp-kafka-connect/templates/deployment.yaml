@@ -110,6 +110,10 @@ spec:
               /etc/confluent/docker/run &
               $CUSTOM_SCRIPT_PATH
               sleep infinity
+          {{- if .Values.startupProbe }}
+          startupProbe:
+{{ toYaml .Values.startupProbe | trim | indent 12 }}
+          {{- end }}
           {{- if .Values.livenessProbe }}
           livenessProbe:
 {{ toYaml .Values.livenessProbe | trim | indent 12 }}
